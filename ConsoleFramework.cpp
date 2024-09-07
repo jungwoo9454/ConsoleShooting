@@ -5,8 +5,6 @@ HANDLE hScreen[2];
 
 void Init()
 {
-	//																			0000 1001				
-	//																0000 1000			0000 0001
 	hScreen[0] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
 	hScreen[1] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
 
