@@ -1,18 +1,14 @@
 #pragma once
-struct Bullet
+class Bullet : public Unit
 {
-	bool isActive;
-	int x;
-	int y;
-	char body[10];
+public:
+	Bullet();
+	~Bullet();
 
-	int attack;
-	int speed;
+	void Move() override;
+	void Clipping() override;
+
+	void Enable(int x, int y);
+	void Disable();
 };
 
-void BulletInit();
-void BulletUpdate();
-void BulletDraw();
-
-void BulletMove();
-void BulletClipping();

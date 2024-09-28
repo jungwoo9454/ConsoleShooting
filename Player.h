@@ -1,19 +1,12 @@
 #pragma once
 
-struct Player
+class Player : public Unit
 {
-	int x;
-	int y;
-	char body[10];
+public:
+	Player();
+	~Player();
 
-	int attack;
-	int speed;
+	void Update() override;
+	void Move() override;
+	void Clipping() override;
 };
-
-void PlayerInit();
-void PlayerUpdate();
-void PlayerDraw();
-
-void PlayerMove();
-void PlayerClipping();
-void FireBullet();
