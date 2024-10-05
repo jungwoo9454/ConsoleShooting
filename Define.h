@@ -14,3 +14,9 @@
 #define D_BULLET_MAX 50
 #define D_ENEMY_MAX 50
 #define D_EFFECT_MAX 50
+
+enum {
+	E_MENU,
+	E_GAME,
+	E_STATE_MAX
+};

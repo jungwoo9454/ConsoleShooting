@@ -38,6 +38,7 @@ int screen[30][120] =
 };
 
 GameMng gameMng;
+Singleton* Singleton::instance = nullptr;
 
 void Init()
 {
@@ -50,6 +51,7 @@ void Init()
 
 	SetConsoleCursorInfo(hScreen[0], &cci);
 	SetConsoleCursorInfo(hScreen[1], &cci);
+
 }
 void Update()
 {
@@ -61,7 +63,7 @@ void Draw()
 
 	gameMng.Draw();
 
-	UIDraw();
+	//UIDraw();
 
 	Flip();
 }

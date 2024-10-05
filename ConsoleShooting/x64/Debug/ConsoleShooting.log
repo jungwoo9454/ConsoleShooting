@@ -10,8 +10,8 @@ C:\Users\User\Documents\Github\ConsoleShooting\ConsoleShooting\ConsoleFramework.
   Effect.cpp
   Enemy.cpp
   GameMng.cpp
+  main.cpp
   Player.cpp
   Unit.cpp
-  main.cpp
   코드를 생성하고 있습니다...
   ConsoleShooting.vcxproj -> C:\Users\User\Documents\Github\ConsoleShooting\ConsoleShooting\x64\Debug\ConsoleShooting.exe

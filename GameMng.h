@@ -2,6 +2,13 @@
 class GameMng
 {
 public:
+	Sound backgroundSound;
+	Sound bulletSound;
+	CStateCtrl stateCtrl;
+
+	MenuState menuState;
+	GameState gameState;
+
 	GameMng();
 	~GameMng();
 

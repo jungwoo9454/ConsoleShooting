@@ -1,7 +1,18 @@
 #include <stdio.h>
 #include <Windows.h>	//win32 API
 #include <time.h>
+#include <fmod.hpp>
+#include <fmod_errors.h>
+#include <string>
+#include <iostream>
+
+#include "Singleton.h"
+
+#include "Sound.h"
 #include "Define.h"
+
+#include "State.h"
+#include "StateCtrl.h"
 
 #include "Unit.h"
 
@@ -10,6 +21,9 @@
 #include "Enemy.h"
 #include "Effect.h"
 
+
+#include "MenuState.h"
+#include "GameState.h"
 
 #include "GameMng.h"
 

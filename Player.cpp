@@ -18,7 +18,7 @@ void Player::Update()
 	
 	if (GetAsyncKeyState(VK_SPACE))
 	{
-		gameMng.CreateBullet(x, y - 1);
+		gameMng.CreateBullet(x, y);
 	}
 }
 

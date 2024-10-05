@@ -7,6 +7,18 @@ Effect effects[D_EFFECT_MAX];
 
 GameMng::GameMng()
 {
+	FMOD::System_Create(&Sound::system);
+	Sound::system->init(512, FMOD_INIT_NORMAL, nullptr);
+	//상대 경로, 절대 경로
+
+	backgroundSound.LoadSoundFile("Debug/Asset/backgroundMusic.mp3", true);
+	bulletSound.LoadSoundFile("Debug/Asset/bullet.wav", false);
+	backgroundSound.Playsound();
+
+	stateCtrl.StateAdd(E_MENU, &menuState);
+	stateCtrl.StateAdd(E_GAME, &gameState);
+
+	stateCtrl.StateChange(E_GAME);
 }
 
 GameMng::~GameMng()
@@ -15,6 +27,7 @@ GameMng::~GameMng()
 
 void GameMng::CreateBullet(int x, int y)
 {
+	bulletSound.Playsound();
 	for (int i = 0; i < D_BULLET_MAX; i++)
 	{
 		if (bullets[i].isActive == false)
@@ -72,25 +85,10 @@ void GameMng::EnemyBulletCollision()
 
 void GameMng::Update()
 {
-	player.Update();
-	for (int i = 0; i < D_BULLET_MAX; i++)
-		bullets[i].Update();
-	for (int i = 0; i < D_ENEMY_MAX; i++)
-		enemys[i].Update();
-	for (int i = 0; i < D_EFFECT_MAX; i++)
-		effects[i].Update();
-
-	CreateEnemy(rand() % 120, -1);
-	EnemyBulletCollision();
+	stateCtrl.Update();
 }
 
 void GameMng::Draw()
 {
-	player.Draw();
-	for (int i = 0; i < D_BULLET_MAX; i++)
-		bullets[i].Draw();
-	for (int i = 0; i < D_ENEMY_MAX; i++)
-		enemys[i].Draw();
-	for (int i = 0; i < D_EFFECT_MAX; i++)
-		effects[i].Draw();
+	stateCtrl.Draw();
 }
